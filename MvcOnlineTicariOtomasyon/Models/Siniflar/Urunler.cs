@@ -7,5 +7,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 {
     public class Urunler
     {
+        public int Urunid { get; set; }
     }
 }
