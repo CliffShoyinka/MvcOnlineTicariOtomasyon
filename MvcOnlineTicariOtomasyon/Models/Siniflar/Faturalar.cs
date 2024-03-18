@@ -16,5 +16,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public string TeslimEden { get; set; }
         public string TeslimAlan { get; set; }
 
+        //bir faturanin birden fazla kalemi olabilir bu yuzden collection kullaniyoruz
+        public ICollection<FaturaKalem> FaturaKalems { get; set; }
+
     }
 }
