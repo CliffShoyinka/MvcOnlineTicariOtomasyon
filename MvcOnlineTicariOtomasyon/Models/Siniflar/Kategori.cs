@@ -16,5 +16,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         //property erisim belirleyici
         public int KategoriId { get; set; }
         public string KategoriAd {  get; set; }
+        
+        //collection
+        public ICollection<Urun> Uruns { get; set; } //herbir kategoride birden fazla urun var anlamina geliyor
     }
 }
