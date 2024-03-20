@@ -13,5 +13,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public string PersonelAd {  get; set; }
         public string PersonelSoyad { get; set; }
         public string PersonelGorsel { get; set; } //fazla alan kaplamasin diye gorselin yolunu saklayacagiz sadece
+
+        public SatisHareket SatisHareket { get; set; }
     }
 }
