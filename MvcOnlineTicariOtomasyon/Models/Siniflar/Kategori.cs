@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations; // key kutuphanesi
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -14,6 +15,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         //entityler uzerinden uygulamamizi yapicaz bu yuzden keye ihtiyacimiz o da primary key
         [Key]
         //property erisim belirleyici
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(30)]
         public int KategoriId { get; set; }
         public string KategoriAd {  get; set; }
         
