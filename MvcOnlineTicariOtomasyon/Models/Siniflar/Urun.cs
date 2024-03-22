@@ -31,6 +31,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         //Bir urunun sadece bir tane kategorisi olabilir
         public Kategori Kategori { get; set; }
 
-        public SatisHareket SatisHareket { get; set; }
+        //public SatisHareket SatisHareket { get; set; }
+
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
 }

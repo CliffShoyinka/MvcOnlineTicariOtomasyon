@@ -16,9 +16,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Key]
         //property erisim belirleyici
 
+        
+        public int KategoriId { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
-        public int KategoriId { get; set; }
         public string KategoriAd {  get; set; }
         
         //collection
