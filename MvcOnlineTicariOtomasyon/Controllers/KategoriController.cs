@@ -17,15 +17,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        [HttpGet]
         public ActionResult KategoriEkle()
         {
             return View();
         }
 
         //we added second time because KategoriEkle() method run when the page was uploaded
-        public ActionResult KategoriEkle()
+        [HttpPost]
+        public ActionResult KategoriEkle(Kategori k)
         {
-            return View();
+            c.Kategoris.Add(k);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
