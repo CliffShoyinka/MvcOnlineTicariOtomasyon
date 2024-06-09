@@ -1,0 +1,34 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@Model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>URUN</th>
+            <th>MARKA</th>
+            <th>STOK</th>
+            <th>ALIS FIYAT</th>
+            <th>SATIS FIYAT</th>
+            <th>KATEGORI</th>
+            <th>GORSEL</th>
+        </tr>
+        @foreach(var u in Model)
+            {
+                <tr>
+                    <td>@u.Urunid</td>
+                    <td>@u.UrunAd</td>
+                    <td>@u.Marka</td>
+                    <td>@u.Stok</td>
+                    <td>@u.AlisFiyati</td>
+                    <td>@u.SatisFiyati</td>
+                    <td>@u.Kategori</td>
+                    <td>@u.UrunGorsel</td>
+                </tr>
+            }
+    </table>
+
