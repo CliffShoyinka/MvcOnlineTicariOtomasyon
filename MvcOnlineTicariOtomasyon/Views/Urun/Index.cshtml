@@ -16,6 +16,7 @@
             <th>SATIS FIYAT</th>
             <th>KATEGORI</th>
             <th>GORSEL</th>
+            <th>SIL</th>
         </tr>
         @foreach(var u in Model)
             {
@@ -28,7 +29,8 @@
                     <td>@u.SatisFiyati</td>
                     <td>@u.Kategori.KategoriAd</td>
                     <td>@u.UrunGorsel</td>
+                    <a href="/Urun/UrunSil/@u.Urunid" class="btn btn-danger">sil</a>
                 </tr>
             }
     </table>
-    <a href="/Urun/YeniUrun/" class="btn btn-info">yeni</a>
+    <a href="/Urun/YeniUrun/" class="btn btn-info">yeni urun</a>
