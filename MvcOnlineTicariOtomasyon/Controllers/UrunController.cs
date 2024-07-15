@@ -44,5 +44,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UrunGetir(int id)
+        {
+            var urundeger = c.Uruns.Find(id);
+            return View("UrunGetir", urundeger);
+        }
     }
 }
