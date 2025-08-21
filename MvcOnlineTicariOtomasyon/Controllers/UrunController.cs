@@ -32,6 +32,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniUrun(Urun p)
         { 
+            // Yeni eklenen ürünler varsayılan olarak aktif olsun
+            p.Durum = true;
             c.Uruns.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -56,6 +58,29 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             var urundeger = c.Uruns.Find(id);
             return View("UrunGetir", urundeger);
+        }
+
+        // Ürün güncelleme işlemi
+        [HttpPost]
+        public ActionResult UrunGuncelle(Urun p)
+        {
+            var urun = c.Uruns.Find(p.Urunid);
+            if (urun == null)
+            {
+                return HttpNotFound();
+            }
+
+            urun.UrunAd = p.UrunAd;
+            urun.Marka = p.Marka;
+            urun.Stok = p.Stok;
+            urun.AlisFiyati = p.AlisFiyati;
+            urun.SatisFiyati = p.SatisFiyati;
+            urun.Kategoriid = p.Kategoriid;
+            urun.UrunGorsel = p.UrunGorsel;
+            urun.Durum = p.Durum;
+
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

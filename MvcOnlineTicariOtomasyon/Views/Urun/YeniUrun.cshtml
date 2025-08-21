@@ -17,9 +17,6 @@
     @Html.LabelFor(x => x.Stok)
     @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Stok)
-    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
-    <br />
     @Html.LabelFor(x => x.AlisFiyati)
     @Html.TextBoxFor(x => x.AlisFiyati, new { @class = "form-control" })
     <br />
@@ -27,14 +24,13 @@
     @Html.TextBoxFor(x => x.SatisFiyati, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Kategori.KategoriId)
-    @Html.DropDownListFor(x=>x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1, new {@class="from-control"})
-    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x=>x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1, new {@class="form-control"})
     <br />
     @Html.LabelFor(x => x.UrunGorsel)
     @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Durum)
-    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    @Html.CheckBoxFor(x => x.Durum)
     <br />
     <button class="btn btn-primary">Kaydet</button>
 </form>

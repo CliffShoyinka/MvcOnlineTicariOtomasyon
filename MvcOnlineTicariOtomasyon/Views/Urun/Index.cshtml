@@ -1,42 +1,42 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
-@Model List<Urun>
+@model List<Urun>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <br />
-    <table class="table table-bordered">
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>URUN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIS FIYAT</th>
+        <th>SATIS FIYAT</th>
+        <th>KATEGORI</th>
+        <th>GORSEL</th>
+        <th>SIL</th>
+        <th>GUNCELLE</th>
+    </tr>
+    @foreach(var u in Model)
+    {
         <tr>
-            <th>ID</th>
-            <th>URUN</th>
-            <th>MARKA</th>
-            <th>STOK</th>
-            <th>ALIS FIYAT</th>
-            <th>SATIS FIYAT</th>
-            <th>KATEGORI</th>
-            <th>GORSEL</th>
-            <th>SIL</th>
-            <th>GUNCELLE</th>
+            <td>@u.Urunid</td>
+            <td>@u.UrunAd</td>
+            <td>@u.Marka</td>
+            <td>@u.Stok</td>
+            <td>@u.AlisFiyati</td>
+            <td>@u.SatisFiyati</td>
+            <td>@u.Kategori.KategoriAd</td>
+            <td>@u.UrunGorsel</td>
+            <td>
+                <a href="/Urun/UrunSil/@u.Urunid" class="btn btn-danger">sil</a>
+            </td>
+            <td>
+                <a href="/Urun/UrunGetir/@u.Urunid" class="btn btn-success">guncelle</a>
+            </td>
         </tr>
-        @foreach(var u in Model)
-            {
-                <tr>
-                    <td>@u.Urunid</td>
-                    <td>@u.UrunAd</td>
-                    <td>@u.Marka</td>
-                    <td>@u.Stok</td>
-                    <td>@u.AlisFiyati</td>
-                    <td>@u.SatisFiyati</td>
-                    <td>@u.Kategori.KategoriAd</td>
-                    <td>@u.UrunGorsel</td>
-                    <td>
-                        <a href="/Urun/UrunSil/@u.Urunid" class="btn btn-danger">sil</a>
-                    </td>
-                    <td>
-                        <a href="/Urun/UrunGetir/@u.Urunid" class="btn btn-success">guncelle</a>
-                    </td>
-                </tr>
-            }
-    </table>
-    <a href="/Urun/YeniUrun/" class="btn btn-info">yeni urun</a>
+    }
+</table>
+<a href="/Urun/YeniUrun/" class="btn btn-info">yeni urun</a>
